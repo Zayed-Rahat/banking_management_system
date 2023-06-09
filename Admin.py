@@ -7,8 +7,8 @@ class Admin:
         self.total_loan_amount = 0
         self.loan_enabled = True
 
-    def create_account(self, name, initial_deposit):
-        new_customer = User(name, initial_deposit)
+    def create_account(self, name, password, initial_deposit):
+        new_customer = User(name, password, initial_deposit)
         self.customers.append(new_customer)
         self.total_balance += initial_deposit
         print(f"Account created for {name}. Initial amount: {initial_deposit}")

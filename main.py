@@ -5,8 +5,8 @@ def main():
     bank_admin = Admin()
 
 # Creating customer accounts
-    bank_admin.create_account("Rahat",  3000)
-    bank_admin.create_account("Zayed", 8000)
+    bank_admin.create_account("Rahat", "12345",  3000)
+    bank_admin.create_account("Zayed", "54321", 8000)
 
 # Depositing and withdrawing amount
     customer_1 = bank_admin.customers[0]

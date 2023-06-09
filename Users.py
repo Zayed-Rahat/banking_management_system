@@ -1,6 +1,7 @@
 class User:
-    def __init__(self, name, initial_deposit):
+    def __init__(self, name, password, initial_deposit):
         self.name = name
+        self.password =password
         self.balance = initial_deposit
         self.transaction_history = []
 
