@@ -10,8 +10,8 @@ def main():
 
 # Depositing and withdrawing amount
     customer_1 = bank_admin.customers[0]
-    customer_1.deposit(4000)
-    customer_1.withdraw(2000)
+    customer_1.deposit(4000,bank_admin)
+    customer_1.withdraw(2000,bank_admin)
 
 # Checking available balance
     customer_1.check_balance()
@@ -24,7 +24,7 @@ def main():
     if bank_admin.loan_enabled:
         customer_1.take_loan(bank_admin)
     else:
-        print("Loan feature is currently disabled.")
+        print("Loan  is currently disabled.")
 
 # Checking transaction history
     customer_1.check_transaction_history()
@@ -34,6 +34,8 @@ def main():
     bank_admin.check_total_balance()
     bank_admin.check_total_loan_amount()
     bank_admin.disable_loan()
+
+
 
 # Checking if the bank is bankrupt
     if bank_admin.is_bankrupt():

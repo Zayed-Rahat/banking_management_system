@@ -1,20 +1,22 @@
 class User:
     def __init__(self, name, password, initial_deposit):
         self.name = name
-        self.password =password
+        self.password = password
         self.balance = initial_deposit
         self.transaction_history = []
 
-    def deposit(self, amount):
+    def deposit(self, amount, bank):
         self.balance += amount
+        bank.total_balance += amount
         self.transaction_history.append(f"Deposited {amount} taka")
-        print(f"Username: {self.name}. Deposit {amount} taka successful. ")
+        print(f"\nUsername: {self.name}. Deposit {amount} taka successful. ")
 
-    def withdraw(self, amount):
+    def withdraw(self, amount, bank):
         if self.balance >= amount:
             self.balance -= amount
+            bank.total_balance -= amount
             self.transaction_history.append(f"Withdraw {amount} taka")
-            print(f"Username: {self.name}. Withdraw {amount} taka successful.")
+            print(f"Username: {self.name}. Withdraw {amount} taka successful.\n")
         else:
             print("Insufficient balance.")
 
